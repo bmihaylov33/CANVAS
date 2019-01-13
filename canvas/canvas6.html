@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CANVAS</title>
+  </head>
+  <body>
+    <h1>OIP KURSOVA RABOTA</h1>
+    <form name="data_IN">
+      N:<input type="text" name="N" value="43"><br>
+      E: <input type="text" name="E" value="163"><br>
+    </form>
+    <button onclick="draw();"> DRAW </button>
+
+    <button onclick="clean();"> CLEAR </button>
+    <br>
+    <canvas id="myCanvas" width="1000" height="600" style="border:1px solid #d3d3d3;">
+      Your browser does not support the HTML5 canvas tag.
+    </canvas>
+
+    <script>
+        var canvas = document.getElementById("myCanvas");
+        var ctx = canvas.getContext("2d");
+
+        function clean() {
+          //Cleaning the lines
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
+
+        function draw() {
+          //Read Form Data
+          var n = document.data_IN.N.value*1;
+          var e = document.data_IN.E.value*1;
+
+          //Initializing the dimensions
+          var a = 30, b = 36, c =36, d = 118, f = 257, g = 48, h = 52, i = 36, j = 84, k = 91, l = 30, m = 14, o = 25, s = 0;
+          a*=3;
+          b*=3;
+          c*=3;
+          d*=3;
+          e*=3;
+          f*=3;
+          g*=3;
+          h*=3;
+          i*=3;
+          j*=3;
+          k*=3;
+          l*=3;
+          m*=3;
+          n*=3;
+          o*=3;
+
+          s = Math.abs(f-(e+k));//Math.abs(f-(e+k));
+
+          ctx.beginPath();
+
+          //First proection
+          ctx.setLineDash([0,0,0,0]);
+          ctx.lineWidth="2";
+
+          ctx.moveTo(70, 120);
+          ctx.lineTo(70 - 6, 120 + 6);
+          ctx.lineTo(70 - 6, 120 + a - 6);
+          ctx.lineTo(70, 120 + a);
+
+          ctx.rect(70, 120, e/4.527, a);
+
+          ctx.rect(70 + e/4.527, 120 - (c-a)/2, e/1.987, c);
+
+          ctx.rect(70 + e/4.527 + e/1.987, 120 - ((c-a)/2 + (g-c)/2), e/3.62, g);
+
+          ctx.rect(70 + e, 120 + (a/2 - n/2), 9, n);
+
+          ctx.rect(79 + e, 120 + (a/2 - h/2), k-j, h - 4);
+          ctx.moveTo(100 + e, 120 + (a/2 - h/2) + (h-4));
+          ctx.lineTo(106 + e, 114 + (a/2 - h/2) + (h-4));
+          ctx.lineTo(106 + e, 126 + (a/2 - h/2));
+          ctx.lineTo(100 + e, 120 + (a/2 - h/2));
+          ctx.rect(106 + e,120 + (a/2 - i/2), j-m, i);
+          ctx.rect(316 + e, 120 - ((c-a)/2 - 16), 6, o);
+          ctx.rect(322 + e, 120 - ((c-a)/2 - 8), m-12, l);
+          ctx.moveTo(352 + e, 120 - ((c-a)/2 - 8) + l);
+          ctx.lineTo(358 + e, 114 - ((c-a)/2 - 8) + l);
+          ctx.lineTo(358 + e,  - ((c-a)/2 - 8) + (l + 36));
+          ctx.lineTo(352 + e, 120 - ((c-a)/2 - 8));
+          ctx.stroke();
+
+          ctx.beginPath();
+          ctx.setLineDash([20,5,2,5]);
+          ctx.lineWidth="1";
+          ctx.moveTo(50 , 120 + (a/2));
+          ctx.lineTo(372 + e, 120 + (a/2));
+          ctx.stroke();
+        }
+
+        </script>
+  </body>
+</html>
